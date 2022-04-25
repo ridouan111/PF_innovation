@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->double('montant');
             $table->String('type');//cheque,carte,paypal
-            $table->foreignId('contrat_id')->references('id')->on('contracts')->onDelete('cascade');
+            $table->foreignId('contrat_id')->references('id')->on('contrats')->onDelete('cascade');
             $table->timestamps();
         });
     }

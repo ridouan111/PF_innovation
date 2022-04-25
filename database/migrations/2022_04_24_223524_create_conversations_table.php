@@ -15,8 +15,15 @@ return new class extends Migration
     {
         Schema::create('conversations', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id','entrepreneur_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('user_id','invesstisseur_id')->references('id')->on('users')->onDelete('cascade');
+         
+            $table->unsignedBigInteger('entrepreneur_id')->nullable();
+            $table->foreign('entrepreneur_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('invesstisseur_id')->nullable();
+            $table->foreign('invesstisseur_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

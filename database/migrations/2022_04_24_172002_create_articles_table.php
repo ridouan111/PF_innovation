@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('titre');
             $table->text('contenue');
-            $table->foreignId('contrat_id')->references('id')->on('contrat')->onDelete('cascade');
+            $table->foreignId('contrat_id')->references('id')->on('contrats')->onDelete('cascade');
             $table->timestamps();
         });
     }
