@@ -39,7 +39,7 @@ class AuthenticatedSessionController extends Controller
         return response()->json([
               "token"=>$token,
               "type"=>Auth::user()->type,
-              "status"=>"isValid"
+              "status"=>"true"
         ]);
         
     }
@@ -62,6 +62,8 @@ class AuthenticatedSessionController extends Controller
 
      
 
-        return ['succes' => 'bien deconnecte'];
+        return response()->json([
+            "status"=>"true"
+      ]);
     }
 }

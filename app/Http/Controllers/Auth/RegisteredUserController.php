@@ -54,7 +54,7 @@ class RegisteredUserController extends Controller
         
         return response()->json([
            
-            "status"=>"bien enregistré"
+            "status"=>"true"
       ]);
       
     }
