@@ -9,7 +9,7 @@ class Secteur extends Model
 {
     use HasFactory;
 
- 
+
 
     public function projets(){
         return $this->belongsToMany(Projet::class,'pivot_table_projet_secteur');
